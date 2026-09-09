@@ -5,17 +5,18 @@
    ============================================================ */
 
 :root{
-  /* PALETA — jasna, architektoniczna, chłodna */
-  --paper:#F4F6F8;          /* główne tło */
-  --paper-2:#E7EBEF;        /* sekcje alternatywne (chłodny jasny szary) */
-  --paper-3:#E7EBEF;        /* delikatne wypełnienia */
-  --ink:#15212E;            /* tekst główny — chłodny grafit */
-  --ink-soft:#243443;       /* nagłówki drugorzędne */
-  --muted:#6B7785;          /* tekst poboczny */
+  /* PALETA - jasna, architektoniczna, chłodna */
+  --paper:#F6F7F8;          /* główne tło - czysta neutralna biel, zero podbarwienia */
+  --paper-2:#EAEDF0;        /* sekcje alternatywne (chłodny jasny szary) */
+  --paper-3:#E1E5E9;        /* delikatne wypełnienia */
+  --ink:#15212E;            /* tekst główny - chłodny grafit */
+  --ink-soft:#24333F;       /* nagłówki drugorzędne */
+  --muted:#59646F;          /* tekst poboczny (WCAG 4.5 na każdym tle) */
   --line:rgba(21,33,46,.12);/* hairline */
-  --accent:#E8A317;         /* stonowany petrol-slate — jedyny akcent */
-  --accent-d:#C9870C;
-  --accent-soft:rgba(232,163,23,.10);
+  --accent:#0E7C93;         /* petrol z loga (kafel "O") - jedyny akcent */
+  --accent-d:#0A6175;
+  --accent-soft:rgba(14,124,147,.10);
+  --accent-light:#3FA8C4;   /* akcent czytelny na ciemnym tle (5,9:1 na --dark) */
   --dark:#15212E;           /* sekcje ciemne (stopka/CTA) */
 
   /* HOVER ZDJĘĆ — JEDEN standard dla całego silnika (decyzja K. 04.08.2026, artefakt z wariantami).
@@ -202,7 +203,7 @@ p,li,blockquote,dd{text-wrap:pretty}
 .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-4)}
 .hero-art{position:relative;aspect-ratio:4/3;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-lg)}
 .hero-art img{width:100%;height:100%;object-fit:cover}
-.hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(18,24,28,.28))}
+.hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(21,33,46,.28))}
 .hero-badge{position:absolute;left:var(--space-5);bottom:var(--space-5);z-index:2;
   background:rgba(252,252,251,.94);backdrop-filter:blur(4px);
   border-radius:var(--r-md);padding:var(--space-4) var(--space-5);box-shadow:var(--sh-md);max-width:78%}
@@ -250,10 +251,10 @@ p,li,blockquote,dd{text-wrap:pretty}
    nagłówkach podstron 3,38-3,43:1 przy wymaganych 4,5 — jasne zdjęcie (hala, śnieg, niebo)
    podchodziło pod biały tekst. Zdjęcia klientów są różne, więc kontrast musi dawać WARSTWA,
    a nie szczęśliwy dobór kadru. */
-.pagehead::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,24,28,.40),rgba(18,24,28,.76))}
+.pagehead::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,33,46,.46),rgba(21,33,46,.84))}
 .pagehead .wrap{position:relative;z-index:2;padding-block:var(--space-9);color:#fff}
 .pagehead h1{color:#fff;max-width:18ch;text-shadow:0 2px 16px rgba(0,0,0,.55)}
-.pagehead .eyebrow{color:#fff}
+.pagehead .eyebrow{color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.55)}
 .pagehead .eyebrow::before{background:#fff}
 .pagehead p{color:rgba(255,255,255,.92);margin-top:var(--space-4);max-width:54ch;text-shadow:0 1px 12px rgba(0,0,0,.5)}
 
@@ -345,7 +346,7 @@ p,li,blockquote,dd{text-wrap:pretty}
 .tile .cap{position:absolute;left:0;right:0;bottom:0;padding:var(--space-5) var(--space-4) var(--space-4);
   /* mocniejszy spad + cien pod tekstem: na JASNYCH zdjeciach klienta (biale fronty, sciany)
      slaby gradient dawal kontrast ~1.5:1 zamiast wymaganych 3.6:1 (bramka wygladu, 10.08.2026) */
-  background:linear-gradient(transparent 10%,rgba(18,24,28,.55) 40%,rgba(18,24,28,.88) 68%,rgba(18,24,28,.99));color:#fff;
+  background:linear-gradient(transparent 10%,rgba(21,33,46,.55) 40%,rgba(21,33,46,.88) 68%,rgba(21,33,46,.99));color:#fff;
   text-shadow:0 1px 2px rgba(0,0,0,.85),0 2px 10px rgba(0,0,0,.55);
   font-size:var(--text-sm);font-weight:600;letter-spacing:.01em;
   opacity:0;transform:translateY(8px);transition:var(--dur) var(--ease)}
@@ -515,7 +516,7 @@ section{padding-block:clamp(64px,8vw,128px)}
 .gateway{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:var(--r-sm);display:block}
 .gateway img{width:100%;height:100%;object-fit:cover;
   transition:transform var(--img-dur) var(--img-ease),filter var(--img-dur) var(--img-ease)}
-.gateway::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(18,24,28,.74))}
+.gateway::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(21,33,46,.88))}
 /* ===== HOVER ZDJĘĆ — jedno miejsce dla WSZYSTKICH kafli ze zdjęciem (K. 04.08.2026) ===== */
 @media(hover:hover){
   .tile img,.gateway img,.m-tile img{filter:var(--img-rest)}
@@ -617,7 +618,7 @@ section{padding-block:clamp(64px,8vw,128px)}
 .manifesto p span, .faq-item summary::after, .op-meta .ico-star, .op-star,
 .fu-cta, .obszar-list li:hover, .btn-ghost:hover, .nav.nav-solid .brand .sub,
 .proces-os .pc-cur, .os-on .proces-os .proces-line > li.os-done .pno { color:var(--accent-text) }
-.cta .eyebrow { color:var(--accent) }
+.cta .eyebrow { color:var(--accent-light) }
 
 /* --- dostępność (audyt 09.08 TOP#23, podzbiór bezpieczny) --- */
 html{scroll-padding-top:84px}                       /* kotwice nie chowają się pod sticky-nav */
@@ -754,8 +755,8 @@ main{display:block}
    ============================================================ */
 
 /* --- P0 KONTRAST: bursztyn jako TEKST na jasnym = 2.0 FAIL (policzone). Naprawy (bursztyn->ciemny tekst / ink). --- */
-.btn-accent{color:#14171c}                                  /* bursztyn + ciemny tekst = 8.28 PASS */
-.sticky-call .sc-call{color:#14171c}                        /* sticky bursztyn + ciemny tekst */
+.btn-accent{color:#fff}                                     /* petrol + biały tekst = 4.85 PASS */
+.sticky-call .sc-call{color:#fff}                           /* sticky petrol + biały tekst */
 .obszar-list li.is-home{background:var(--ink);border-color:var(--ink);color:#fff}  /* było bursztyn+biel 2.17 -> ink+biel 16.29 */
 .proces-line .pno{color:var(--ink-soft)}                    /* numery procesu: było bursztyn 2.0 -> ink-soft (czytelne); kropka osi zostaje bursztyn (grafika) */
 
@@ -899,8 +900,8 @@ main{display:block}
 .ba-handle span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;
   background:var(--accent);box-shadow:0 2px 12px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center}
 .ba-handle span::before,.ba-handle span::after{content:"";position:absolute;width:0;height:0;border-block:5px solid transparent}
-.ba-handle span::before{left:9px;border-right:6px solid #14171c}
-.ba-handle span::after{right:9px;border-left:6px solid #14171c}
+.ba-handle span::before{left:9px;border-right:6px solid #fff}
+.ba-handle span::after{right:9px;border-left:6px solid #fff}
 .ba-podpis{text-align:center;color:var(--muted);font-size:var(--text-sm);margin-top:var(--space-5)}
 
 /* ============================================================
@@ -943,17 +944,17 @@ main{display:block}
 .nav .nav-links a{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;padding-block:6px}
 .nav .nav-links a::after{height:1px}
 .nav .nav-links a.btn-accent{font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:.5rem 1.1rem;border-radius:4px;box-shadow:none}
-.nav .nav-links a.btn-accent{background:var(--accent);border:1px solid var(--accent);color:#14171c}
-.nav .nav-links a.btn-accent:hover{background:var(--accent);border-color:var(--accent);color:#14171c;filter:brightness(1.07)}
+.nav .nav-links a.btn-accent{background:var(--accent);border:1px solid var(--accent);color:#fff}
+.nav .nav-links a.btn-accent:hover{background:var(--accent-d);border-color:var(--accent-d);color:#fff}
 .nav{background:transparent}
-.nav::after{content:"";position:absolute;left:0;right:0;top:0;height:150px;z-index:-1;pointer-events:none;transition:opacity .35s ease;background:linear-gradient(180deg,rgba(8,6,4,.55) 0%,rgba(8,6,4,0) 100%)}
+.nav::after{content:"";position:absolute;left:0;right:0;top:0;height:150px;z-index:-1;pointer-events:none;transition:opacity .35s ease;background:linear-gradient(180deg,rgba(10,14,20,.55) 0%,rgba(10,14,20,0) 100%)}
 .nav.nav-solid::after{opacity:0}
-.nav .brand .name{color:#f5f1ea}
-.nav .brand .sub{color:rgba(245,241,234,.82)}
-.nav .nav-links a:not(.btn-accent){color:rgba(245,241,234,.9)}
+.nav .brand .name{color:#F2F4F6}
+.nav .brand .sub{color:rgba(242,244,246,.82)}
+.nav .nav-links a:not(.btn-accent){color:rgba(242,244,246,.9)}
 .nav .nav-links a:not(.btn-accent):hover,.nav .nav-links a.active:not(.btn-accent){color:#fff}
 .nav .nav-links a:not(.btn-accent)::after{background:#fff}
-.nav .nav-toggle span{background:#f5f1ea}
+.nav .nav-toggle span{background:#F2F4F6}
 .nav.nav-solid{background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:saturate(140%) blur(10px);border-bottom:var(--hairline)}
 .nav.nav-solid .brand .name{color:var(--ink)}
 .nav.nav-solid .brand .sub{color:var(--accent-d)}
@@ -966,8 +967,8 @@ main{display:block}
 .nav .nav-inner{position:relative;height:64px}
 .nav .nav-links{flex:1;justify-content:center;gap:clamp(1rem,2.2vw,1.9rem);padding-right:15.5rem}
 .nav .nav-links a.btn-accent{position:absolute;right:0;top:50%;transform:translateY(-50%);--klocek-stoi:translateY(-50%);margin:0}
-.nav:not(.nav-solid) .nav-links a.btn-accent{background:transparent;border-color:rgba(245,241,234,.55);color:#f5f1ea}
-.nav:not(.nav-solid) .nav-links a.btn-accent:hover{background:var(--accent);border-color:var(--accent);color:#14171c;transform:translateY(-50%)}
+.nav:not(.nav-solid) .nav-links a.btn-accent{background:var(--accent);border-color:var(--accent);color:#fff}
+.nav:not(.nav-solid) .nav-links a.btn-accent:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-50%)}
 }
 @media(max-width:680px){
 .nav .nav-links:not(.open){transform:translateY(-160%);visibility:hidden}
@@ -1839,11 +1840,13 @@ footer{view-transition-name:mt-foot}
 }
 
 
-/* === auto-paleta z marki klienta (źródło: logo) === */
-:root{--accent:#2B7E61;--accent-d:#0D6A4E;--accent-soft:rgba(43,126,97,0.10);--paper:#F7FBF9;--paper-2:#EBF2EF;--paper-3:#E0E9E4;--ink:#1A231F;--ink-soft:#3F4B46;--muted:#757E7A;--line:rgba(26,35,31,.12);}
+/* === paleta z marki klienta (źródło: logo KOBE, kafel "O") ===
+   Petrol na neutralnej, nieprzebarwionej bieli - poprzednia zieleń gryzła się
+   z magentą ze zdjęcia głównego i podbarwiała wszystkie tła na zielono. */
+:root{--accent:#0E7C93;--accent-d:#0A6175;--accent-light:#3FA8C4;--accent-soft:rgba(14,124,147,0.10);--paper:#F6F7F8;--paper-2:#EAEDF0;--paper-3:#E1E5E9;--ink:#15212E;--ink-soft:#24333F;--muted:#59646F;--line:rgba(21,33,46,.12);}
 .btn-accent{color:#fff}
 .nav .nav-links a.btn-accent{color:#fff}
 .btn-accent[data-accent-d],.cta-d .btn-accent{color:#fff}
 
 /* === szary tekst dociągnięty do czytelności (WCAG 4.5 na wszystkich tłach) === */
-:root{--muted:#616866;}
+:root{--muted:#59646F;}
